@@ -1,11 +1,28 @@
 <template>
   <div id="app">
-    <h2>routes and router-view</h2>
-    <ul>
-      <li><router-link to="/pictures">Pictures</router-link></li>
-      <li><router-link to="/video">Video</router-link></li>
-      <li><router-link to="/">Home</router-link></li>
-    </ul>
+    <b-container class="background">
+      <b-row>
+        <b-col>
+          <h1 id="hometitle" class="centered">Plants</h1>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col></b-col>
+        <b-col id="navcol" class="centered">
+          <b-navbar id="navigation">
+            <b-navbar-toggle target="nav_collapse" id="navtoggle"></b-navbar-toggle>
+            <b-collapse is-nav id="nav_collapse">
+              <b-navbar-nav>
+                <b-nav-item><router-link to="/pictures">Pictures</router-link></b-nav-item>
+                <b-nav-item><router-link to="/video">Video</router-link></b-nav-item>
+                <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
+              </b-navbar-nav>
+            </b-collapse>
+          </b-navbar>
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+    </b-container>
     <router-view></router-view>
   </div>
 </template>
@@ -22,30 +39,35 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 5%;
+}
+
+.centered {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 
-h1, h2 {
-  font-weight: normal;
+#hometitle {
+  font-size: 20vmin;
+  font-family: 'Indie Flower', cursive;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.background {
+  background-image: url('./assets/efeuwand.jpg');
+  margin: auto;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+#navigation {
+  background-color: white;
 }
 
-a {
-  color: #42b983;
+#navtoggle {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    border-width:0;
+    border-radius:0;
 }
 </style>

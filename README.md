@@ -1,6 +1,6 @@
 # multimedia
 
-> A Vue.js project
+> ... sonä scheiss
 
 ## Build Setup
 
