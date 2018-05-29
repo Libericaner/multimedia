@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-container class="background">
+    <b-container>
       <b-row>
         <b-col>
           <h1 id="hometitle" class="centered">Plants</h1>
@@ -9,7 +9,7 @@
       <b-row>
         <b-col></b-col>
         <b-col id="navcol" class="centered">
-          <b-navbar id="navigation">
+          <b-navbar>
             <b-navbar-toggle target="nav_collapse" id="navtoggle"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse">
               <b-navbar-nav>
@@ -23,6 +23,14 @@
         <b-col></b-col>
       </b-row>
     </b-container>
+    <div class="grid">
+      <div class="grid-item"></div>
+      <div class="grid-item"><router-link to="/pictures">Pictures</router-link></div>
+      <div class="grid-item"><router-link to="/video">Video</router-link></div>
+      <div class="grid-item"><router-link to="/">Home</router-link></div>
+      <div class="grid-item"><router-link to="/">Home</router-link></div>
+      <div class="grid-item"></div>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -54,13 +62,15 @@ export default {
   font-family: 'Indie Flower', cursive;
 }
 
-.background {
-  background-image: url('./assets/efeuwand.jpg');
-  margin: auto;
+.grid {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: 2fr, 1fr, 1fr, 1fr, 2fr;
 }
 
-#navigation {
-  background-color: white;
+.grid-item {
+  background-color: aqua;
 }
 
 #navtoggle {
