@@ -6,30 +6,11 @@
           <h1 id="hometitle" class="centered">Plants</h1>
         </b-col>
       </b-row>
-      <b-row>
-        <b-col></b-col>
-        <b-col id="navcol" class="centered">
-          <b-navbar>
-            <b-navbar-toggle target="nav_collapse" id="navtoggle"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse">
-              <b-navbar-nav>
-                <b-nav-item><router-link to="/pictures">Pictures</router-link></b-nav-item>
-                <b-nav-item><router-link to="/video">Video</router-link></b-nav-item>
-                <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
-        </b-col>
-        <b-col></b-col>
-      </b-row>
     </b-container>
     <div class="grid">
-      <div class="grid-item"></div>
-      <div class="grid-item"><router-link to="/pictures">Pictures</router-link></div>
-      <div class="grid-item"><router-link to="/video">Video</router-link></div>
-      <div class="grid-item"><router-link to="/">Home</router-link></div>
-      <div class="grid-item"><router-link to="/">Home</router-link></div>
-      <div class="grid-item"></div>
+      <div class="grid-item"><router-link class="link" to="/pictures">Pictures</router-link></div>
+      <div class="grid-item"><router-link class="link" to="/video">Video</router-link></div>
+      <div class="grid-item"><router-link class="link" to="/stream">Stream</router-link></div>
     </div>
     <router-view></router-view>
   </div>
@@ -60,17 +41,20 @@ export default {
 #hometitle {
   font-size: 20vmin;
   font-family: 'Indie Flower', cursive;
+  color: #006400;
 }
 
 .grid {
   display: grid;
   align-content: center;
   justify-content: center;
-  grid-template-columns: 2fr, 1fr, 1fr, 1fr, 2fr;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  margin-bottom: 5%;
 }
 
-.grid-item {
-  background-color: aqua;
+.link {
+  color: #006400;
+  text-align: center;
 }
 
 #navtoggle {

@@ -1,15 +1,15 @@
-import Home from './components/Home.vue';
+import Stream from './components/Stream.vue';
 import Pictures from './components/Pictures.vue';
 import Video from './components/Video.vue';
 
 export default [
     {
         path: '/',
-        redirect: '/home'
+        redirect: '/pictures'
     },
     {
-        path: '/home',
-        component: Home
+        path: '/stream',
+        component: Stream
     },
     {
         path: '/pictures',

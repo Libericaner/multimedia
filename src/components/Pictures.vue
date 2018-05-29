@@ -30,14 +30,13 @@ export default {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: minmax(250px,1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: minmax(200px,1fr);
   grid-column-gap: 50px;
   grid-row-gap: 50px;
+  align-items: center;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
   align-self: center;
   justify-self: center;
 }

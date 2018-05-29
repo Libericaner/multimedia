@@ -1,17 +1,17 @@
 <template>
-    <div id="video">
-        <iframe id="ourvideo" src="https://www.youtube.com/embed/GKnvbNiNJxE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="stream">
+        <iframe id="youtubeframe" src="https://www.youtube.com/embed/9GXloHT7X5E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </template>
 
 <script>
 export default {
-   name: 'video' 
+   name: 'stream' 
 }
 </script>
 
 <style>
-    #video {
+    #stream {
         text-align: center;
         position: relative; 
         padding-bottom: 56.25%; /* ratio 16x9 */
@@ -21,7 +21,7 @@ export default {
         height: auto;
     }
 
-    #ourvideo {
+    #youtubeframe {
         position: absolute; 
         top: 0; 
         left: 0; 
@@ -29,3 +29,4 @@ export default {
         height: 100%; 
     }
 </style>
+
