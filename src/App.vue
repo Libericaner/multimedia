@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-container>
+    <b-container id="title">
       <b-row>
         <b-col>
           <h1 id="hometitle" class="centered">Plants</h1>
@@ -34,6 +34,10 @@ export default {
   padding: 5%;
 }
 
+#title {
+  margin-bottom: 2%;
+}
+
 .centered {
   text-align: center;
 }
@@ -41,7 +45,7 @@ export default {
 #hometitle {
   font-size: 20vmin;
   font-family: 'Indie Flower', cursive;
-  color: #006400;
+  color: #4AAE9B;
 }
 
 .grid {
@@ -52,8 +56,19 @@ export default {
   margin-bottom: 5%;
 }
 
+.grid-item {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.grid-item a:hover {
+  color: #4AAE9B;
+  text-decoration: none;
+}
+
 .link {
-  color: #006400;
+  color: black;
   text-align: center;
 }
 
