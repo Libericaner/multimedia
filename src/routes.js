@@ -18,5 +18,9 @@ export default [
     {
         path: '/video',
         component: Video
+    },
+    {
+        path: '/*',
+        redirect: '/pictures'
     }
 ];

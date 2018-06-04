@@ -8,26 +8,19 @@
             </div>
         </div>
 
-        <transition name="modal-fade" v-if="isModalVisible">
-            <div class="modal-backdrop">
+        <transition v-if="isModalVisible">
                 <div class="modal">
+                    <img :src="currentPicture[0]" class="center-fit">
                     <div class="modal-header">
                         <p>Plants</p>
                         <button type="button" class="btn-close" @click="close">x</button>
                     </div>
-                    <div class="modal-body">
-                        <div class="imgbox">
-                            <img :src="currentPicture[0]" class="center-fit">
-                        </div>
-                        <br />
+                    <div class="modal-footer">
                         <button type="button" class="btn-green" @click="prevPic">previous</button>
+                        <button type="button" class="btn-green" @click="close">close</button>
                         <button type="button" class="btn-green" @click="nextPic">next</button>
                     </div>
-                    <div class="modal-footer">
-                            <button type="button" class="btn-green" @click="close">close</button>
-                    </div>
                 </div>
-            </div>
         </transition>
     </div>
 </template>
@@ -37,13 +30,18 @@ export default {
    name: 'pictures',
    data: function() {
        return {
-           //pics [src,description,index(starting at 0)]
-            pics: [[require('./../assets/websitepics/koala.jpg'),'desc1', 0],
-                [require('./../assets/websitepics/kanguru.jpg'),'desc2', 1],
-                [require('./../assets/websitepics/tukan.jpg'),'desc3', 2]],
+            pics: [[require('./../assets/websitepics/joel1.png'),'desc1', 0],
+                [require('./../assets/websitepics/joel2.png'),'desc2', 1],
+                [require('./../assets/websitepics/joel3.png'),'desc3', 2],
+                [require('./../assets/websitepics/miro1.jpg'),'desc4', 3],
+                [require('./../assets/websitepics/miro2.jpg'),'desc5', 4],
+                [require('./../assets/websitepics/miro3.jpg'),'desc6', 5],
+                [require('./../assets/websitepics/dave1.jpg'),'desc7', 6],
+                [require('./../assets/websitepics/dave2.jpg'),'desc8', 7],
+                [require('./../assets/websitepics/dave3.jpg'),'desc9', 8]],
             isModalVisible: false,
             currentPicture: null,
-            registeredPics: 3
+            registeredPics: 9
        }
    },
    methods: {
@@ -105,8 +103,6 @@ export default {
 
 .pic-item {
   padding: 2%;
-  align-self: center;
-  justify-self: center;
   text-align: center;
 }
 
@@ -116,67 +112,43 @@ export default {
 
 
 /* Dialog */
-
-.imgbox {
-   display: grid;
-   height: 100%;
-  }
   .center-fit {
-   max-width: 100%;
-   max-height: 100vh;
+   position: relative;
+   width: auto;
+   height: 100%;
    margin: auto;
-  }
-
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   text-align: center;
+   align-self: center;
   }
 
   .modal {
     background: #FFFFFF;
-    box-shadow: 2px 2px 20px 1px;
-    overflow-x: auto;
-    display: flex;
+    overflow-x: scroll;
+    display: grid;
     flex-direction: column;
   }
 
-  .modal-header,
-  .modal-footer {
-    padding: 15px;
-    display: flex;
-  }
-
   .modal-header {
-    border-bottom: 1px solid #eeeeee;
+    background-color: white;
+    position: fixed;
+    top: 0%;
     color: #4AAE9B;
+    text-align: center;
+    width: 100%;
+    grid-template-columns: auto auto;
     justify-content: space-between;
     font-size: 5vmin;
     font-family: 'Indie Flower', cursive;
   }
 
   .modal-footer {
-    border-top: 1px solid #eeeeee;
+    background-color: white;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
     justify-content: center;
+    grid-template-columns: auto auto auto;
     text-align: center;
-  }
-
-  .modal-body {
-    position: relative;
-    padding: 20px 10px;
-    text-align: center;
-    vertical-align: middle;
-  }
-
-  .modal-body img {
-    margin-top: 2%;
-    margin-bottom: 2%;
   }
 
   .btn-close {
@@ -195,14 +167,4 @@ export default {
     border: 1px solid #4AAE9B;
     border-radius: 2px;
     }
-  
-  .modal-fade-enter,
-  .modal-fade-leave-active {
-    opacity: 0;
-  }
-
-  .modal-fade-enter-active,
-  .modal-fade-leave-active {
-    transition: opacity .5s ease
-  }
 </style>
