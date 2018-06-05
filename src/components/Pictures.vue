@@ -3,7 +3,7 @@
         <div class="grid-container">
             <div class="pic-item" v-for="p in pics" :key="p[0]">
                 <div class="clickbox" v-on:click="showPic(p)">
-                    <pic :src="p[0]" :desc="p[1]"></pic>    
+                    <pic :src="p[0]" :desc="p[1]" :title="p[3]"></pic>    
                 </div>
             </div>
         </div>
@@ -30,15 +30,15 @@ export default {
    name: 'pictures',
    data: function() {
        return {
-            pics: [[require('./../assets/websitepics/joel1.png'),'desc1', 0],
-                [require('./../assets/websitepics/joel2.png'),'desc2', 1],
-                [require('./../assets/websitepics/joel3.png'),'desc3', 2],
-                [require('./../assets/websitepics/miro1.jpg'),'desc4', 3],
-                [require('./../assets/websitepics/miro2.jpg'),'desc5', 4],
-                [require('./../assets/websitepics/miro3.jpg'),'desc6', 5],
-                [require('./../assets/websitepics/dave1.jpg'),'desc7', 6],
-                [require('./../assets/websitepics/dave2.jpg'),'desc8', 7],
-                [require('./../assets/websitepics/dave3.jpg'),'desc9', 8]],
+            pics: [[require('./../assets/websitepics/joel1.png'),'Work the shot', 0, 'Ungewohnte Umgebung'],
+                [require('./../assets/websitepics/joel2.png'),'Bewusste Redundanz', 1, 'Irritiert'],
+                [require('./../assets/websitepics/joel3.png'),'Kein Fokus', 2, 'Grüsslig'],
+                [require('./../assets/websitepics/miro1.jpg'),'Zentrum des geschehens', 3, 'Ausgesetzt'],
+                [require('./../assets/websitepics/miro2.jpg'),'Vordergrund klar, Hintergrund verschwommen', 4, 'Stachelig'],
+                [require('./../assets/websitepics/miro3.jpg'),'KISS', 5, 'Spiesser'],
+                [require('./../assets/websitepics/dave1.jpg'),'Einatmen - Ausatmen - Abdrücken', 6, 'Die eingesperrte Schönheit'],
+                [require('./../assets/websitepics/dave2.jpg'),'Das Bild wurde am Morgen geschossen', 7, 'Kreativität'],
+                [require('./../assets/websitepics/dave3.jpg'),'Wegen wenig Licht ISO auf 60 gestellt', 8, 'Die Natur findet einen Weg']],
             isModalVisible: false,
             currentPicture: null,
             registeredPics: 9
@@ -104,10 +104,21 @@ export default {
 .pic-item {
   padding: 2%;
   text-align: center;
+  border-radius: 5px;
+}
+
+.pic-item h1 {
+    margin-top: 2%;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.pic-item p {
+    font-size: 80%;
 }
 
 .pic-item:hover {
-    background-color: #AAE6DA;
+    background-color: #D7EBC6;
 }
 
 
@@ -119,6 +130,8 @@ export default {
    margin: auto;
    text-align: center;
    align-self: center;
+   left: 0;
+   right: 0;
   }
 
   .modal {
@@ -132,7 +145,7 @@ export default {
     background-color: white;
     position: fixed;
     top: 0%;
-    color: #4AAE9B;
+    color: #347300;
     text-align: center;
     width: 100%;
     grid-template-columns: auto auto;
@@ -157,14 +170,15 @@ export default {
     padding: 20px;
     cursor: pointer;
     font-weight: bold;
-    color: #4AAE9B;
+    color: #347300;
     background: transparent;
   }
 
   .btn-green {
     color: white;
-    background: #4AAE9B;
-    border: 1px solid #4AAE9B;
+    background: #347300;
+    cursor: pointer;
+    border: 1px solid #347300;
     border-radius: 2px;
     }
 </style>

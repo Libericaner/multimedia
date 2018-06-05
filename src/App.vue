@@ -45,7 +45,7 @@ export default {
 #hometitle {
   font-size: 20vmin;
   font-family: 'Indie Flower', cursive;
-  color: #4AAE9B;
+  color: #347300;
 }
 
 .grid {
@@ -63,7 +63,12 @@ export default {
 }
 
 .grid-item a:hover {
-  color: #4AAE9B;
+  color: #54BA00;
+  text-decoration: none;
+}
+
+.grid-item a:active {
+  color: #54BA00;
   text-decoration: none;
 }
 
